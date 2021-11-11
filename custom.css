@@ -1,0 +1,177 @@
+/* ----------------- Global CSS ------------------- */
+
+/* h1.page-header-title.clr,
+.single .entry-title {
+  display: none;
+} */
+
+#speogsmaal {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+hr {
+  width: 25rem;
+  background-color: #000;
+}
+
+/* ----------------- Global filtering ------------------- */
+
+#tema-oversigt #tema-article,
+#kursus-oversigt #kursus-article,
+#kursus-oversigt #kursus-article {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2.5rem;
+  grid-column: 2/3;
+}
+
+/* h1:before,
+h2:before {
+  background: #767676;
+  content: "\020";
+  display: none;
+  height: 2px;
+  margin: 1rem 0;
+  width: 1em;
+} */
+
+/* nav#menu {
+  place-content: center;
+  display: flex;
+} */
+
+#filtrering {
+  grid-column: 2/3;
+}
+
+section#tema-oversigt,
+section#kursus-oversigt {
+  grid-column: 2/3;
+}
+
+/* #tema-oversigt #tema-article article:nth-child(odd),
+#kursus-oversigt #kursus-article article:nth-child(odd) {
+  background-color: rgb(176, 217, 255);
+}
+
+#tema-oversigt #tema-article article:nth-child(even),
+#kursus-oversigt #kursus-article article:nth-child(even) {
+  background-color: rgb(129, 194, 255);
+} */
+
+#tema-oversigt #tema-article article img,
+#tema-oversigt #tema-article article button,
+#kursus-oversigt #kursus-article article img,
+#kursus-oversigt #kursus-article article button {
+  cursor: pointer;
+}
+
+/* #tema-article article,
+#kursus-article article {
+  padding: 0.5rem;
+  border: 1px solid #000;
+} */
+
+nav#filtrering {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* ----------------- Forsiden ------------------- */
+
+#tema-article article > * {
+  grid-area: 1/1;
+}
+
+#tema-article > * {
+  display: grid;
+  place-items: center;
+}
+
+#tema-article button.videre {
+  margin-top: 5rem;
+}
+
+#tema-article img {
+  opacity: 35%;
+  z-index: -1;
+}
+
+/* ----------------- Kursuskatalog ------------------- */
+
+#ret-oversigt {
+  grid-column: 2/3;
+}
+
+button {
+  border-radius: 0;
+}
+
+h1:not(.site-title):before,
+h2:before {
+  background: #767676;
+  content: "\020";
+  display: none;
+  height: 2px;
+  margin: 1rem 0;
+  width: 1em;
+}
+
+article.single-kursus {
+  padding: 0.5rem;
+  border: 1px solid #000;
+  background-color: rgb(176, 217, 255);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.niveau,
+.faglighed {
+  font-style: italic;
+}
+
+/* ----------------- Single view ------------------- */
+
+article#hoved_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+#hoved_info img.billede {
+  width: 75%;
+}
+
+div#info_box_inner {
+  background-color: gainsboro;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+article#info_box_outer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+#hoved_info .navn {
+  font-size: 34px;
+  text-align: center;
+}
