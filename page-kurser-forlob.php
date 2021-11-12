@@ -79,7 +79,7 @@ get_header(); ?>
 
 				<template>
 					<article>
-						<img src="" alt="">
+						<img class="picture" src="" alt="">
 						<h2 class="title"></h2>
 						<p class="niveau"></p>
 						<p class="faglighed"></p>
@@ -167,11 +167,12 @@ get_header(); ?>
 
 								klon.querySelector(".videre").addEventListener("click", () => {
 								location.href = "https://designbymagnus.dk/kea/2_semester/tema9/ungdomsbyen/forside/kurser-forlob/" + tema.slug + "?id=" + tema.ctema;
-
 								});
-								// klon.querySelector("img").addEventListener("click", () => {
-								// location.href = tema.link;
-								// });
+
+								klon.querySelector(".picture").addEventListener("click", () => {
+								location.href = "https://designbymagnus.dk/kea/2_semester/tema9/ungdomsbyen/forside/kurser-forlob/" + tema.slug + "?id=" + tema.ctema;
+								});
+
 								liste.appendChild(klon);
 								}
 							});

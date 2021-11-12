@@ -43,22 +43,19 @@ get_header(); ?>
 				<div id="primary" class="content-area">
 					
 					<main id="main" class="page-Kurser-main">
-					<nav id="filtrering">
-						<button data-kursus="alle">Alle</button>
-					</nav>
 					<section id="kursus-oversigt">
 						<article id="kursus-article"></article>
 					</section>
 
 				<template>
-				<article>
-					<img class="billede" src="" alt="">
-					<h2 class="title"></h2>
-					<p class="niveau"></p>
-					<p class="faglighed"></p>
-					<p class="beskrivelse"></p>
-					<button class="videre">Læs mere</button>
-				</article>
+					<article>
+						<img class="billede" src="" alt="">
+						<h2 class="title"></h2>
+						<p><span class="niveau"></span> </p>
+						<p><span class="faglighed"></span> </p>
+						<p class="beskrivelse"></p>
+						<button class="videre">Læs mere</button>
+					</article>
 				</template>
 
 				</main><!-- #main -->
@@ -82,29 +79,6 @@ get_header(); ?>
 							const ctemaResponse = await fetch(ctemaUrl);
 							kurser = await response.json();
 							ctema = await ctemaResponse.json();
-							console.log(kurser);
-							console.log(ctema);
-							visKurser();
-							filterKnapper();	
-						}
-
-						function filterKnapper (){
-							ctema.forEach(cat =>{
-								document.querySelector("#filtrering").innerHTML += `<button class="filter" data-kursus="${cat.id}">${cat.name}</button>`
-							})
-							addEventListenersToButton();
-						}
-
-						function addEventListenersToButton(){
-							document.querySelectorAll("#filtrering button").forEach(elm =>{
-								elm.addEventListener("click", filtrering);
-							})
-						}
-
-						function filtrering(){
-							filter = this.dataset.kursus;
-							console.log(parseInt(filter));
-							// console.log(filter);
 							visKurser();
 						}
 
@@ -121,8 +95,12 @@ get_header(); ?>
 								klon.querySelector(".title").textContent = kursus.title.rendered;
 								klon.querySelector(".billede").src = kursus.billede.guid;
 								klon.querySelector(".beskrivelse").textContent = kursus.beskrivelse;
+								klon.querySelector(".niveau").textContent = kursus.niveau;
+								klon.querySelector(".faglighed").textContent = kursus.faglighed;
 
-
+								klon.querySelector(".billede").addEventListener("click", () => {
+								location.href = kursus.link;
+								});
 								klon.querySelector(".videre").addEventListener("click", () => {
 								location.href = kursus.link;
 								});
