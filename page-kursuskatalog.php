@@ -44,7 +44,7 @@ get_header(); ?>
 					
 					<main id="main" class="page-Kurser-main">
 					<nav id="filtrering">
-						<button data-kursus="alle">Alle</button>
+						<button data-kursus="alle" class="valgt"></button>
 					</nav>
 					<section id="kursus-oversigt">
 						<article id="kursus-article"></article>
@@ -105,6 +105,10 @@ get_header(); ?>
 							filter = this.dataset.kursus;
 							console.log(parseInt(filter));
 							// console.log(filter);
+
+							document.querySelector(".valgt").classList.remove("valgt");
+							this.classList.add("valgt");
+
 							visKurser();
 						}
 
@@ -115,13 +119,13 @@ get_header(); ?>
 							kurser.forEach(kursus => {
 								// console.log(kursus.ctema);
 
-								if (kursus.ctema.includes(parseInt(ctemaId))) {
+								// 
+								if (filter == "alle" || kursus.ctema.includes(parseInt(filter))) {
 								let klon = skabelon.cloneNode(true).content;
 
 								klon.querySelector(".title").textContent = kursus.title.rendered;
 								klon.querySelector(".billede").src = kursus.billede.guid;
 								klon.querySelector(".beskrivelse").textContent = kursus.beskrivelse;
-
 
 								klon.querySelector(".videre").addEventListener("click", () => {
 								location.href = kursus.link;
