@@ -5,6 +5,54 @@ h1.page-header-title.clr,
   display: none;
 }
 
+button,
+#speogsmaal a,
+body div.wpforms-container-full .wpforms-form button {
+  font-family: var(--e-global-typography-accent-font-family), Sans-serif;
+  font-size: var(--e-global-typography-accent-font-size);
+  font-weight: var(--e-global-typography-accent-font-weight);
+  line-height: var(--e-global-typography-accent-line-height);
+  letter-spacing: var(--e-global-typography-accent-letter-spacing);
+  background-color: var(--e-global-color-accent);
+  border: 0;
+  padding: 0.8rem 1.6rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+#back_knap,
+#hoved_info button,
+#info_box_outer button,
+#speogsmaal button {
+  background-color: #b9dce4;
+}
+
+button:hover,
+#speogsmaal a:hover {
+  text-decoration: none;
+  transform: scale(0.89);
+}
+
+img.billede {
+  transition: all 0.3s ease;
+}
+
+img.billede:hover {
+  transform: scale(0.95);
+}
+
+.valgt {
+  background-color: #ce5775;
+  color: #ffffff;
+}
+
+button.filter,
+button.videre,
+#speogsmaal a,
+#speogsmaal button {
+  color: #17008a;
+}
+
 #speogsmaal {
   display: flex;
   justify-content: center;
@@ -17,6 +65,16 @@ h1.page-header-title.clr,
 hr {
   width: 25rem;
   background-color: #000;
+}
+
+aside#right-sidebar {
+  display: flex;
+  justify-content: center;
+  margin-right: 37rem;
+}
+
+.widget-area {
+  margin-top: 3rem;
 }
 
 /* ----------------- Global filtering ------------------- */
@@ -111,9 +169,9 @@ nav#filtrering {
   grid-column: 2/3;
 }
 
-button {
+/* button {
   border-radius: 0;
-}
+} */
 
 h1:not(.site-title):before,
 h2:before {
