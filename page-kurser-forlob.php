@@ -65,7 +65,7 @@ get_header(); ?>
 
 				<main id="main">
 				<nav id="filtrering">
-					<button data-tema="alle">Alle</button>
+					<button data-tema="alle" class="valgt">Alle</button>
 				</nav>
 				<section id="tema-oversigt">
 					<article id="tema-article"></article>
@@ -144,6 +144,13 @@ get_header(); ?>
 						function filtrering(){
 							filter = this.dataset.tema;
 							console.log(parseInt(filter));
+
+							document.querySelector(".valgt").classList.remove("valgt");
+							this.classList.add("valgt");
+
+							// const txtKategori = document.querySelector("header .txt_kategori");
+							// console.log(this);
+							// txtKategori.textContent = "Flitrer: " + this.textContent;
 							// console.log(filter);
 							visTemaer();
 						}
